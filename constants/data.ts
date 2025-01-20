@@ -3,7 +3,7 @@ import { CarType } from "@/types";
 export const cars: CarType[] = [
   {
     id: 1,
-    ame: "Toyota Avanza",
+    name: "Toyota Avanza",
     brand: "Toyota",
     model: "Avanza",
     year: 2022,
