@@ -1,6 +1,9 @@
 import { CustomFilter, Hero, SearchBar } from "@/app/components";
 import Image from "next/image";
 
+import { cars } from "@/constants/data";
+import CarCard from "./components/CarCard";
+
 export default function Home() {
   return (
     <main className="overflow-hidden">
@@ -18,6 +21,12 @@ export default function Home() {
             <CustomFilter />
             <CustomFilter />
           </div>
+        </div>
+
+        <div className="home__cars-wrapper">
+          {cars.map((car) => (
+            <CarCard car={car} key={car.id} />
+          ))}
         </div>
       </div>
     </main>

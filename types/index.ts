@@ -5,6 +5,9 @@ export interface CustomButtonProps {
   containerStyles?: string;
   handleClick?: MouseEventHandler<HTMLButtonElement>;
   btnType?: "button" | "submit";
+  textStyles?: string;
+  rightIcon?: string;
+  isDisabled?: boolean;
 }
 
 export interface SearchManufacturerProps {
@@ -12,15 +15,17 @@ export interface SearchManufacturerProps {
   setManufacturer: (manufacture: string) => void;
 }
 
-export interface CarProps {
-  city_mpg: number;
-  class: string;
-  combination_mpg: number;
-  cylinders: number;
-  drive: string;
-  fuel_type: string;
-  make: string;
+export interface Car {
+  id: number;
+  name: string;
+  brand: string;
   model: string;
-  transmission: string;
   year: number;
+  seats: number;
+  price_per_day: number;
+  fuel_type: string;
+  transmission: string;
+  image: string;
+  description: string;
+  availability: boolean;
 }

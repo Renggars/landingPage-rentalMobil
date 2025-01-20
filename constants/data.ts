@@ -1,4 +1,6 @@
-[
+import { Car } from "@/types";
+
+export const cars: Car[] = [
   {
     id: 1,
     name: "Toyota Avanza",
@@ -23,7 +25,7 @@
     seats: 7,
     price_per_day: 650000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/toyota-innova.png",
     description:
       "Toyota Innova adalah mobil keluarga yang nyaman dengan kapasitas hingga 7 orang dan cocok untuk perjalanan jauh.",
@@ -39,7 +41,7 @@
     seats: 7,
     price_per_day: 900000,
     fuel_type: "Diesel",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/toyota-fortuner.png",
     description:
       "Toyota Fortuner adalah SUV tangguh dengan performa luar biasa, cocok untuk petualangan di medan berat.",
@@ -54,7 +56,7 @@
     seats: 5,
     price_per_day: 600000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/honda-civic.png",
     description:
       "Honda Civic merupakan mobil sedan dengan desain sporty dan performa yang tinggi, cocok untuk perjalanan pribadi atau bisnis.",
@@ -69,7 +71,7 @@
     seats: 5,
     price_per_day: 750000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/honda-crv.png",
     description:
       "Honda CR-V adalah SUV kompak dengan kenyamanan dan fitur canggih, ideal untuk perjalanan jarak jauh dan keluarga.",
@@ -84,7 +86,7 @@
     seats: 5,
     price_per_day: 500000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/honda-hrv.png",
     description:
       "Honda HR-V adalah SUV kecil dengan desain stylish dan efisiensi bahan bakar yang baik, cocok untuk penggunaan sehari-hari.",
@@ -99,7 +101,7 @@
     seats: 7,
     price_per_day: 400000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/mitsubishi-xpander.png",
     description:
       "Mitsubishi Xpander adalah MPV dengan desain modern dan fitur yang lengkap, ideal untuk keluarga besar.",
@@ -114,7 +116,7 @@
     seats: 7,
     price_per_day: 950000,
     fuel_type: "Diesel",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/mitsubishi-pajero-sport.png",
     description:
       "Mitsubishi Pajero Sport adalah SUV tangguh dengan kemampuan off-road yang luar biasa, cocok untuk petualangan di segala medan.",
@@ -144,7 +146,7 @@
     seats: 5,
     price_per_day: 550000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/toyota-yaris.png",
     description:
       "Toyota Yaris adalah mobil hatchback dengan desain modern, performa responsif, dan efisiensi bahan bakar yang tinggi, ideal untuk perjalanan sehari-hari.",
@@ -174,7 +176,7 @@
     seats: 7,
     price_per_day: 400000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/honda-mobilio.png",
     description:
       "Honda Mobilio adalah MPV dengan kapasitas 7 penumpang dan desain yang praktis untuk keluarga besar.",
@@ -189,7 +191,7 @@
     seats: 5,
     price_per_day: 500000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/honda-jazz.png",
     description:
       "Honda Jazz adalah mobil hatchback yang praktis dan stylish dengan ruang kabin yang luas dan efisiensi bahan bakar yang baik.",
@@ -204,7 +206,7 @@
     seats: 7,
     price_per_day: 2000000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/toyota-alphard.png",
     description:
       "Toyota Alphard adalah MPV premium yang menawarkan kenyamanan dan kemewahan terbaik untuk perjalanan keluarga atau bisnis.",
@@ -249,7 +251,7 @@
     seats: 7,
     price_per_day: 450000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/toyota-rush.png",
     description:
       "Toyota Rush adalah SUV stylish dan tangguh yang cocok untuk perjalanan keluarga atau eksplorasi ringan.",
@@ -264,7 +266,7 @@
     seats: 5,
     price_per_day: 400000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/toyota-raize.png",
     description:
       "Toyota Raize adalah SUV kompak dengan desain modern dan fitur canggih, cocok untuk kebutuhan mobilitas perkotaan.",
@@ -279,7 +281,7 @@
     seats: 2,
     price_per_day: 3000000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/toyota-supra.png",
     description:
       "Toyota Supra adalah mobil sport legendaris dengan desain agresif dan performa luar biasa, cocok untuk penggemar kecepatan.",
@@ -309,7 +311,7 @@
     seats: 7,
     price_per_day: 2500000,
     fuel_type: "Diesel",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/toyota-land-cruiser.png",
     description:
       "Toyota Land Cruiser adalah SUV premium dengan kemampuan off-road luar biasa dan kenyamanan yang optimal untuk segala jenis perjalanan.",
@@ -324,7 +326,7 @@
     seats: 5,
     price_per_day: 600000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/toyota-corolla.png",
     description:
       "Toyota Corolla adalah sedan ikonik dengan desain elegan, efisiensi bahan bakar yang baik, dan performa berkendara yang halus.",
@@ -339,7 +341,7 @@
     seats: 5,
     price_per_day: 550000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/honda-city-hatchback.png",
     description:
       "Honda City Hatchback adalah hatchback modern dengan desain elegan, performa efisien, dan kabin luas yang cocok untuk perjalanan sehari-hari.",
@@ -354,7 +356,7 @@
     seats: 7,
     price_per_day: 450000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/daihatsu-terios.png",
     description:
       "Daihatsu Terios adalah SUV tangguh dengan desain modern, cocok untuk perjalanan keluarga dan petualangan.",
@@ -384,7 +386,7 @@
     seats: 7,
     price_per_day: 400000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/daihatsu-xenia.png",
     description:
       "Daihatsu Xenia adalah MPV serbaguna dengan kenyamanan dan efisiensi yang cocok untuk perjalanan keluarga.",
@@ -414,7 +416,7 @@
     seats: 5,
     price_per_day: 400000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/daihatsu-rocky.png",
     description:
       "Daihatsu Rocky adalah SUV kompak dengan desain sporty dan teknologi canggih, cocok untuk mobilitas perkotaan.",
@@ -429,7 +431,7 @@
     seats: 7,
     price_per_day: 500000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/hyundai-stargazer.png",
     description:
       "Hyundai Stargazer adalah MPV modern dengan desain futuristik dan fitur canggih, cocok untuk perjalanan keluarga.",
@@ -444,7 +446,7 @@
     seats: 5,
     price_per_day: 600000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/hyundai-creta.png",
     description:
       "Hyundai Creta adalah SUV stylish dan praktis dengan performa tangguh, cocok untuk perjalanan jarak jauh maupun di kota.",
@@ -459,7 +461,7 @@
     seats: 5,
     price_per_day: 1200000,
     fuel_type: "Listrik",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/hyundai-ioniq5.png",
     description:
       "Hyundai Ioniq 5 adalah mobil listrik futuristik dengan desain modern dan teknologi canggih, ideal untuk perjalanan ramah lingkungan.",
@@ -474,7 +476,7 @@
     seats: 7,
     price_per_day: 1500000,
     fuel_type: "Diesel",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/hyundai-palisade.png",
     description:
       "Hyundai Palisade adalah SUV premium dengan kapasitas besar dan kenyamanan maksimal, cocok untuk perjalanan keluarga besar.",
@@ -489,7 +491,7 @@
     seats: 5,
     price_per_day: 1000000,
     fuel_type: "Listrik",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/hyundai-kona-electric.png",
     description:
       "Hyundai Kona Electric adalah SUV kompak dengan tenaga listrik sepenuhnya, menawarkan efisiensi tinggi dan desain modern.",
@@ -504,7 +506,7 @@
     seats: 5,
     price_per_day: 700000,
     fuel_type: "Bensin",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/hyundai-tucson.png",
     description:
       "Hyundai Tucson adalah SUV kelas menengah dengan desain elegan, performa andal, dan fitur keselamatan canggih.",
@@ -519,7 +521,7 @@
     seats: 5,
     price_per_day: 1500000,
     fuel_type: "Listrik",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/hyundai-ioniq6.png",
     description:
       "Hyundai Ioniq 6 adalah sedan listrik dengan desain aerodinamis futuristik dan teknologi canggih, cocok untuk perjalanan ramah lingkungan.",
@@ -534,7 +536,7 @@
     seats: 7,
     price_per_day: 1400000,
     fuel_type: "Diesel",
-    transmission: "Automatic",
+    transmission: "Matic",
     image: "/images/hyundai-santa-fe.png",
     description:
       "Hyundai Santa Fe adalah SUV mewah dengan performa handal, ruang kabin luas, dan fitur kenyamanan premium, ideal untuk perjalanan keluarga.",
