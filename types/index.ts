@@ -15,7 +15,7 @@ export interface SearchManufacturerProps {
   setManufacturer: (manufacture: string) => void;
 }
 
-export interface Car {
+export interface CarType {
   id: number;
   name: string;
   brand: string;

@@ -1,12 +1,13 @@
 "use client";
 
-import { Car } from "@/types";
+import { CarType } from "@/types";
 import Image from "next/image";
 import React, { useState } from "react";
 import CustomButton from "./CustomButton";
+import CarDetail from "./CarDetail";
 
 interface CarCard {
-  car: Car;
+  car: CarType;
 }
 
 const CardCar = ({ car }: CarCard) => {
@@ -76,6 +77,12 @@ const CardCar = ({ car }: CarCard) => {
           />
         </div>
       </div>
+
+      <CarDetail
+        isOpen={isOpen}
+        closeModal={() => setIsOpen(false)}
+        car={car}
+      />
     </div>
   );
 };

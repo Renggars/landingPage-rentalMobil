@@ -1,9 +1,9 @@
-import { Car } from "@/types";
+import { CarType } from "@/types";
 
-export const cars: Car[] = [
+export const cars: CarType[] = [
   {
     id: 1,
-    name: "Toyota Avanza",
+    ame: "Toyota Avanza",
     brand: "Toyota",
     model: "Avanza",
     year: 2022,
