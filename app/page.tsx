@@ -9,12 +9,19 @@ import { seats, yearsOfProduction } from "@/constants";
 import { useState } from "react";
 
 export default function Home() {
+  const [selectedBrand, setSelectedBrand] = useState<string | null>("");
+  const [selectedModel, setSelectedModel] = useState<string | null>("");
   const [selectedSeats, setSelectedSeats] = useState<number | null | string>(
     null
   );
   const [selectedYear, setSelectedYear] = useState<number | null | string>(
     null
   );
+
+  const handleSearch = (brand: string, model: string) => {
+    setSelectedBrand(brand);
+    setSelectedModel(model);
+  };
 
   // Filter data berdasarkan filter seats dan year
   const filteredCars = cars.filter((car) => {
@@ -24,6 +31,12 @@ export default function Home() {
         : true) &&
       (selectedYear && typeof selectedYear === "number"
         ? car.year === selectedYear
+        : true) &&
+      (selectedBrand
+        ? car.brand.toLowerCase().includes(selectedBrand.toLowerCase())
+        : true) &&
+      (selectedModel
+        ? car.model.toLowerCase().includes(selectedModel.toLowerCase())
         : true)
     );
   });
@@ -37,7 +50,7 @@ export default function Home() {
         </div>
 
         <div className="home__filters">
-          <SearchBar />
+          <SearchBar onSearch={handleSearch} />
 
           <div className="home__filter-container">
             {/* Filter berdasarkan jumlah seats */}

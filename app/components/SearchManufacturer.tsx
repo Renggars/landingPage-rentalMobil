@@ -5,6 +5,7 @@ import {
   ComboboxButton,
   ComboboxInput,
   ComboboxOption,
+  ComboboxOptions,
   Transition,
 } from "@headlessui/react";
 
@@ -18,18 +19,6 @@ const SearchManufacturer = ({
   manufacturer,
   setManufacturer,
 }: SearchManufacturerProps) => {
-  const [query, setQuery] = useState("");
-
-  const filteredManufactures =
-    query === ""
-      ? manufacturers
-      : manufacturers.filter((item) =>
-          item
-            .toLowerCase()
-            .replace(/\s+./g, "")
-            .includes(query.toLowerCase().replace(/\s+./g, ""))
-        );
-
   return (
     <div className="search-manufacturer">
       <Combobox value={manufacturer} onChange={setManufacturer}>
@@ -56,16 +45,20 @@ const SearchManufacturer = ({
             leave="transition ease-in duration-100"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
-            afterLeave={() => setQuery("")}
+            afterLeave={() => {}}
           >
-            <ComboboxOption value={""}>
-              {filteredManufactures.map((item) => (
+            <ComboboxOptions
+              className={
+                "absolute w-full mt-1 bg-white shadow-lg max-h-60 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none z-30"
+              }
+            >
+              {manufacturers.map((item) => (
                 <ComboboxOption
                   key={item}
                   className={({
                     focus,
                   }) => `relative search-manufacturer__option ${
-                    focus ? "bg-primary-blue" : "text-gray-900"
+                    focus ? "bg-primary-blue text-white" : "text-gray-900"
                   }
                   `}
                   value={item}
@@ -92,7 +85,7 @@ const SearchManufacturer = ({
                   )}
                 </ComboboxOption>
               ))}
-            </ComboboxOption>
+            </ComboboxOptions>
           </Transition>
         </div>
       </Combobox>

@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import SearchManufacturer from "./SearchManufacturer";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   <button type="submit" className={`-m-3 z-10 ${otherClasses}`}>
@@ -17,45 +16,21 @@ const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
   </button>
 );
 
-const SearchBar = () => {
+const SearchBar = ({
+  onSearch,
+}: {
+  onSearch: (brand: string, model: string) => void;
+}) => {
   const [manufacturer, setManufacturer] = useState("");
   const [model, setModel] = useState("");
-  const router = useRouter();
 
-  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    if (manufacturer === "" && model === "") {
-      return alert("Please fill in the search bar");
-    }
-
-    updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase());
-  };
-
-  const updateSearchParams = (model: string, manufacturer: string) => {
-    const searchParams = new URLSearchParams(window.location.search);
-
-    if (model.length > 0) {
-      searchParams.set("model", model);
-    } else {
-      searchParams.delete("model");
-    }
-
-    if (manufacturer.length > 0) {
-      searchParams.set("manufacturer", manufacturer);
-    } else {
-      searchParams.delete("manufacturer");
-    }
-
-    const newPathname = `${
-      window.location.pathname
-    }?${searchParams.toString()}`;
-
-    router.push(newPathname);
+    onSearch(manufacturer, model);
   };
 
   return (
-    <form className="searchbar" onSubmit={handleSearch}>
+    <form className="searchbar" onSubmit={handleSubmit}>
       <div className="searchbar__item">
         <SearchManufacturer
           manufacturer={manufacturer}
