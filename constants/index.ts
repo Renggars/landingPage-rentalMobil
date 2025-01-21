@@ -2,31 +2,38 @@ export const manufacturers = ["Honda", "Hyundai", "Mitsubishi", "Toyota"];
 
 export const yearsOfProduction = [
   { title: "Year", value: "" },
-  { title: "2015", value: "2015" },
-  { title: "2016", value: "2016" },
-  { title: "2017", value: "2017" },
-  { title: "2018", value: "2018" },
-  { title: "2019", value: "2019" },
-  { title: "2020", value: "2020" },
-  { title: "2021", value: "2021" },
-  { title: "2022", value: "2022" },
-  { title: "2023", value: "2023" },
-  { title: "2024", value: "2024" },
-  { title: "2025", value: "2025" },
+  { title: "2020", value: 2020 },
+  { title: "2021", value: 2021 },
+  { title: "2022", value: 2022 },
+  { title: "2023", value: 2023 },
+  { title: "2024", value: 2024 },
+  { title: "2025", value: 2025 },
 ];
 
-export const fuels = [
+export const seats = [
   {
-    title: "Fuel",
+    title: "Seat",
     value: "",
   },
   {
-    title: "Gas",
-    value: "Gas",
+    title: "2 Seats",
+    value: 2,
   },
   {
-    title: "Electricity",
-    value: "Electricity",
+    title: "4 Seats",
+    value: 4,
+  },
+  {
+    title: "5 Seats",
+    value: 5,
+  },
+  {
+    title: "7 Seats",
+    value: 7,
+  },
+  {
+    title: "15 Seats",
+    value: 15,
   },
 ];
 

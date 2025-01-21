@@ -29,3 +29,14 @@ export interface CarType {
   description: string;
   availability: boolean;
 }
+
+export interface OptionType {
+  title: string;
+  value: string | number;
+}
+
+export type CustomFilterProps = {
+  title: string;
+  options: OptionType[];
+  onChange: (option: OptionType) => void;
+};
