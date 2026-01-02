@@ -1,12 +1,13 @@
 "use client";
 
-import { CustomFilter, Hero, SearchBar } from "@/app/components";
-import Image from "next/image";
+import { CustomButton, CustomFilter, Hero, SearchBar } from "@/app/components";
 
 import { cars } from "@/constants/data";
 import CarCard from "./components/CarCard";
 import { seats, yearsOfProduction } from "@/constants";
 import { useState } from "react";
+import About from "./components/About";
+import BookingTerms from "./components/BookingTerms";
 
 export default function Home() {
   const [selectedBrand, setSelectedBrand] = useState<string | null>("");
@@ -17,6 +18,7 @@ export default function Home() {
   const [selectedYear, setSelectedYear] = useState<number | null | string>(
     null
   );
+  const [showAll, setShowAll] = useState(false);
 
   const handleSearch = (brand: string, model: string) => {
     setSelectedBrand(brand);
@@ -40,13 +42,20 @@ export default function Home() {
         : true)
     );
   });
+
+  const displayedCars = showAll ? filteredCars : filteredCars.slice(0, 8);
+
   return (
     <main className="overflow-hidden">
       <Hero />
-      <div className="mt-12 padding-x padding-y max-width" id="discover">
+      <About />
+      <div
+        className="mt-12 padding-x padding-y max-width scroll-mt-20"
+        id="armada"
+      >
         <div className="home__text-container">
-          <h1 className="text-4xl font-extrabold">Car Catalogue</h1>
-          <p>Explore the cars you might like</p>
+          <h1 className="text-4xl font-extrabold">Katalog Armada</h1>
+          <p>Temukan mobil pilihan yang sesuai dengan kebutuhan Anda</p>
         </div>
 
         <div className="home__filters">
@@ -70,8 +79,8 @@ export default function Home() {
         </div>
 
         <div className="home__cars-wrapper">
-          {filteredCars.length > 0 &&
-            filteredCars.map((car) => <CarCard car={car} key={car.id} />)}
+          {displayedCars.length > 0 &&
+            displayedCars.map((car) => <CarCard car={car} key={car.id} />)}
         </div>
 
         {filteredCars.length === 0 && (
@@ -81,6 +90,19 @@ export default function Home() {
             </p>
           </div>
         )}
+
+        {/* Tombol See All */}
+        {filteredCars.length > 8 && !showAll && (
+          <div className="flex justify-center">
+            <CustomButton
+              title="See All Cars"
+              containerStyles="bg-primary-blue text-white rounded-full mt-10"
+              handleClick={() => setShowAll(true)}
+            />
+          </div>
+        )}
+
+        <BookingTerms />
       </div>
     </main>
   );

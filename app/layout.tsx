@@ -3,8 +3,8 @@ import "./globals.css";
 import { Footer, Navbar } from "@/app/components";
 
 export const metadata: Metadata = {
-  title: "Rent Car",
-  description: "Discover the best cars with the best price for you",
+  title: "Rental Mobil",
+  description: "Rental Mobil Surabaya",
 };
 
 export default function RootLayout({

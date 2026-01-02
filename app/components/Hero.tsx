@@ -1,40 +1,50 @@
 "use client";
 
 import React from "react";
-import CustomButton from "./CustomButton";
 import Image from "next/image";
 
 const Hero = () => {
-  const handleScroll = () => {};
+  const handleScroll = () => {
+    const nextSection = document.getElementById("discover");
+
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <div className="hero">
-      <div className="flex-1 pt-20 padding-x">
+      <div className="flex-1 pt-36 padding-x">
         <h1 className="hero__title">
-          Find, Book, or Rent a Car -- quickly and easily!
+          Cari, Pesan, atau Sewa Mobil — Cepat dan Tanpa Ribet!
         </h1>
 
-        <p className="hero__subtitle">
-          Streamline your car rental experience with our effortless booking
-          process.
+        <p className="text-2xl">
+          Permudah pengalaman sewa mobil Anda dengan proses pemesanan yang
+          praktis. Rentcar menyediakan berbagai pilihan armada untuk segala
+          kebutuhan perjalanan Anda.
         </p>
 
-        <CustomButton
-          title="Explore Cars"
-          containerStyles="bg-primary-blue text-white rounded-full mt-10"
-          handleClick={handleScroll}
-        />
+        <a
+          href={"#armada"}
+          className="mt-10 px-8 py-3 bg-primary-blue text-white font-semibold rounded-full shadow-lg 
+                     hover:bg-blue-700 hover:shadow-primary-blue/30 active:scale-95 transition-all"
+        >
+          Lihat Armada
+        </a>
       </div>
 
       <div className="hero__image-container">
         <div className="hero__image">
           <Image
-            src={"/images/toyota-alphard.png"}
-            alt="hero"
+            src="/images/toyota-alphard.png"
+            alt="Rentcar - Sewa Mobil Toyota Alphard"
             fill
             className="object-contain"
+            priority
           />
         </div>
+
         <div className="hero__image-overlay"></div>
       </div>
     </div>

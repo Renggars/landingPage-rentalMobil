@@ -5,6 +5,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import CustomButton from "./CustomButton";
 import CarDetail from "./CarDetail";
+import { FaWhatsapp } from "react-icons/fa";
 
 interface CarCard {
   car: CarType;
@@ -13,6 +14,15 @@ interface CarCard {
 const CardCar = ({ car }: CarCard) => {
   const { name, year, transmission, price_per_day, image, seats } = car;
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleSewaWA = () => {
+    const phoneNumber = "628123456789"; // Ganti dengan nomor WA Anda
+    const message = `Halo Rentcar, saya ingin menyewa mobil *${name}* (${year}). Berapa ketersediaan untuk tanggal terdekat?`;
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(url, "_blank");
+  };
 
   return (
     <div className="car-card group">
@@ -23,7 +33,7 @@ const CardCar = ({ car }: CarCard) => {
       <p className="flex mt-6 text-[32px]">
         <span className="self-start text-[14px] font-semibold">RP</span>
         {new Intl.NumberFormat("id-ID").format(price_per_day)}
-        <span className="self-end text-[14px] font-semibold">/day</span>
+        <span className="self-end text-[14px] font-semibold">/hari</span>
       </p>
 
       <div className="relative w-full h-40 my-3 object-contain">
@@ -54,7 +64,7 @@ const CardCar = ({ car }: CarCard) => {
               height={20}
               alt="streering wheel"
             />
-            <p className="text-[14px]">{seats} Seat</p>
+            <p className="text-[14px]">{seats} Kursi</p>
           </div>
           <div className="flex flex-col justify-center items-center gap-2">
             <Image
@@ -77,6 +87,14 @@ const CardCar = ({ car }: CarCard) => {
           />
         </div>
       </div>
+
+      <button
+        onClick={handleSewaWA}
+        className="w-full mt-4 flex items-center justify-center gap-2 py-3 bg-[#25D366]/10 text-[#25D366] font-bold rounded-xl hover:bg-[#25D366] hover:text-white transition-all border border-[#25D366]/20"
+      >
+        <FaWhatsapp />
+        Sewa Sekarang
+      </button>
 
       <CarDetail
         isOpen={isOpen}
