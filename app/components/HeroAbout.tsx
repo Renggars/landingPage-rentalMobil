@@ -22,10 +22,8 @@ export default function HeroAbout() {
                 <span className="text-gray-800">RENTAL</span>{" "}
                 <span className="text-blue-500">MOBIL</span>
                 <br />
-                <span className="inline-block bg-blue-500 text-white px-3 py-1 mt-2">
-                  TERBAIK
-                </span>{" "}
-                <span className="text-gray-700">HARI INI</span>
+                <span className="text-blue-500">TERPERCAYA</span>{" "}
+                <span className="text-gray-700">UNTUK ANDA</span>
               </h1>
 
               <div className="inline-block mt-4 rounded-full border border-blue-500 px-5 py-2 text-sm tracking-widest text-gray-700">
@@ -34,7 +32,7 @@ export default function HeroAbout() {
 
               <p className="mt-4 max-w-md text-gray-600">
                 Dedikasi kami adalah memberikan pengalaman perjalanan terbaik di
-                Surabaya dengan armada prima dan layanan yang tulus.
+                dengan armada prima dan layanan yang tulus.
               </p>
 
               <a
