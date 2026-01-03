@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { Calendar, User, ArrowRight, Tag } from "lucide-react";
 import HeroAbout from "../components/HeroAbout";
+import Link from "next/link";
 
 const blogPosts = [
   {
@@ -95,13 +96,16 @@ const Page = () => {
                 </p>
 
                 <div className="mt-auto pt-6 border-t border-slate-50">
-                  <button className="text-blue-600 font-bold flex items-center gap-2 group/btn">
+                  <Link
+                    href={`/blog/${post.id}`}
+                    className="text-blue-600 font-bold flex items-center gap-2 group/btn w-fit"
+                  >
                     Baca Selengkapnya
                     <ArrowRight
                       size={18}
                       className="group-hover/btn:translate-x-2 transition-transform"
                     />
-                  </button>
+                  </Link>
                 </div>
               </div>
             </article>
