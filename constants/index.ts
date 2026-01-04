@@ -39,21 +39,20 @@ export const seats = [
 
 export const footerLinks = [
   {
-    title: "Company",
+    title: "Perusahaan",
     links: [
-      { title: "Events", url: "/" },
-      { title: "Blog", url: "/" },
-      { title: "Podcast", url: "/" },
-      { title: "Invite a friend", url: "/" },
+      { title: "Tentang Kami", url: "/tentang-kami" },
+      { title: "Armada", url: "/armada" },
+      { title: "Blog", url: "/blog" },
+      { title: "Kontak", url: "/kontak" },
     ],
   },
   {
     title: "Socials",
     links: [
-      { title: "Discord", url: "/" },
+      { title: "Tiktok", url: "/" },
       { title: "Instagram", url: "/" },
-      { title: "Twitter", url: "/" },
-      { title: "Facebook", url: "/" },
+      { title: "Youtube", url: "/" },
     ],
   },
 ];
