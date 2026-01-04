@@ -22,7 +22,7 @@ const BookingTerms = () => {
     <section id="syarat-ketentuan" className="py-20 bg-slate-50 mt-10">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-16">
         {/* Header */}
-        <div className="text-center max-w-5xl mx-auto mb-20">
+        <div className="text-center max-w-5xl mx-auto mb-10 xl:mb-20">
           <h2 className="text-4xl font-extrabold text-slate-900 mb-4">
             Syarat & Ketentuan Booking
           </h2>
@@ -32,10 +32,10 @@ const BookingTerms = () => {
           </p>
         </div>
 
-        <div className="space-y-16">
+        <div className="space-y-10 xl:space-y-16">
           {/* 1. Sewa Dengan Supir */}
           <div>
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-3 mb-5 xl:mb-8">
               <div className="p-2 bg-blue-600 rounded-lg text-white">
                 <HiOutlineDocumentText size={24} />
               </div>
@@ -43,7 +43,7 @@ const BookingTerms = () => {
                 Sewa Dengan Supir
               </h3>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 xl:gap-6">
               <TermCard
                 icon={<HiOutlineDocumentText size={24} />}
                 title="Identitas Diri"
@@ -147,21 +147,38 @@ const BookingTerms = () => {
         </div>
 
         {/* Footer Info */}
-        <div className="mt-16 flex flex-col md:flex-row items-center justify-between p-8 bg-slate-900 rounded-3xl text-white gap-6">
-          <div className="flex items-center gap-4">
-            <HiOutlineExclamationCircle
-              size={40}
-              className="text-blue-400 shrink-0"
-            />
-            <p className="text-sm opacity-90 leading-relaxed">
-              <strong>Penting:</strong> Rentcar tidak bertanggung jawab atas
-              kehilangan barang setelah layanan selesai. Mohon cek kembali
-              barang bawaan Anda.
-            </p>
+        <div className="mt-16 bg-slate-900 rounded-3xl text-white p-6 sm:p-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            {/* TEXT AREA */}
+            <div className="flex flex-col gap-3">
+              {/* ICON + TITLE */}
+              <div className="flex items-center gap-3">
+                <HiOutlineExclamationCircle
+                  size={28}
+                  className="text-blue-400 shrink-0"
+                />
+                <span className="font-bold text-base">Penting</span>
+              </div>
+
+              {/* DESCRIPTION */}
+              <p className="text-sm opacity-90 leading-relaxed">
+                Rentcar tidak bertanggung jawab atas kehilangan barang setelah
+                layanan selesai. Mohon cek kembali barang bawaan Anda.
+              </p>
+            </div>
+
+            {/* BUTTON */}
+            <button
+              className="
+        w-full md:w-auto
+        bg-blue-600 px-8 py-4 rounded-xl
+        font-bold whitespace-nowrap
+        hover:bg-blue-500 transition-all
+      "
+            >
+              Hubungi Admin WA
+            </button>
           </div>
-          <button className="whitespace-nowrap bg-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-blue-500 transition-all">
-            Hubungi Admin WA
-          </button>
         </div>
       </div>
     </section>

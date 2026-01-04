@@ -107,9 +107,8 @@ export default function Home() {
             Lihat Semua Armada
           </Link>
         </div>
-
-        <BookingTerms />
       </div>
+      <BookingTerms />
     </main>
   );
 }
