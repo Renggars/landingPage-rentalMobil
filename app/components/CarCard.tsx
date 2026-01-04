@@ -3,9 +3,8 @@
 import { CarType } from "@/types";
 import Image from "next/image";
 import React, { useState } from "react";
-import CustomButton from "./CustomButton";
 import CarDetail from "./CarDetail";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaChevronRight, FaWhatsapp } from "react-icons/fa";
 
 interface CarCard {
   car: CarType;
@@ -28,6 +27,23 @@ const CardCar = ({ car }: CarCard) => {
     <div className="car-card group">
       <div className="car-card__content">
         <h2 className="car-card__content-title">{name}</h2>
+
+        <button
+          onClick={() => setIsOpen(true)}
+          className="
+      flex items-center gap-1.5 
+      text-[12px] md:text-[13px] font-bold
+      text-blue-600 whitespace-nowrap 
+      bg-blue-50 hover:bg-blue-600 hover:text-white
+      px-4 py-2 rounded-xl
+      border border-blue-100 hover:border-blue-600
+      shadow-sm hover:shadow-md hover:shadow-blue-200
+      transition-all duration-300 group/btn
+    "
+        >
+          <span>Detail</span>
+          <FaChevronRight className="text-[10px] transform group-hover/btn:translate-x-1 transition-transform" />
+        </button>
       </div>
 
       <p className="flex mt-6 text-[32px]">
@@ -47,7 +63,7 @@ const CardCar = ({ car }: CarCard) => {
       </div>
 
       <div className="relative flex w-full mt-2">
-        <div className="flex group-hover:invisible w-full justify-between text-gray">
+        <div className="flex w-full justify-between text-gray">
           <div className="flex flex-col justify-center items-center gap-2">
             <Image
               src={"/steering-wheel.svg"}
@@ -76,29 +92,24 @@ const CardCar = ({ car }: CarCard) => {
             <p className="text-[14px]">{year}</p>
           </div>
         </div>
-
-        <div className="car-card__btn-container">
-          <CustomButton
-            title="Lihat Detail"
-            containerStyles="w-full py-[16px] rounded-full bg-primary-blue"
-            textStyles="text-white text-[14px] leading-[17px] font-bold"
-            rightIcon="/right-arrow.svg"
-            handleClick={() => setIsOpen(true)}
-          />
-        </div>
       </div>
 
-      <button
-        onClick={handleSewaWA}
-        className="w-full mt-4 flex items-center justify-center gap-2 py-3 bg-[#25D366]/10 text-[#25D366] font-bold rounded-xl hover:bg-[#25D366] hover:text-white transition-all border border-[#25D366]/20"
-      >
-        <FaWhatsapp />
-        Sewa Sekarang
-      </button>
+      {/* Actions (Vertical Buttons) */}
+      <div className="w-full flex flex-col gap-3 mt-2">
+        {/* Primary Button: WhatsApp */}
+        <button
+          onClick={handleSewaWA}
+          className="w-full flex items-center justify-center gap-2 py-3 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition-colors shadow-lg shadow-green-100"
+        >
+          <FaWhatsapp className="text-xl" />
+          Sewa Sekarang
+        </button>
+      </div>
 
       <CarDetail
         isOpen={isOpen}
         closeModal={() => setIsOpen(false)}
+        handleSewaWA={handleSewaWA}
         car={car}
       />
     </div>

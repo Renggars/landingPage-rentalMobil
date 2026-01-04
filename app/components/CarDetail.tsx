@@ -9,18 +9,25 @@ import {
 } from "@headlessui/react";
 import Image from "next/image";
 import React, { Fragment } from "react";
+import { FaWhatsapp } from "react-icons/fa";
 
 interface CarDetailProps {
   isOpen: boolean;
   closeModal: () => void;
   car: CarType;
+  handleSewaWA: () => void;
 }
 
-const CarDetail = ({ isOpen, closeModal, car }: CarDetailProps) => {
+const CarDetail = ({
+  isOpen,
+  closeModal,
+  handleSewaWA,
+  car,
+}: CarDetailProps) => {
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className={"relative z-10"} onClose={closeModal}>
+        <Dialog as="div" className={"relative z-50"} onClose={closeModal}>
           <TransitionChild
             as={Fragment}
             enter="ease-out duration-300"
@@ -125,6 +132,13 @@ const CarDetail = ({ isOpen, closeModal, car }: CarDetailProps) => {
                             );
                           })}
                       </div>
+                      <button
+                        onClick={handleSewaWA}
+                        className="w-full mt-6 flex items-center justify-center gap-2 py-3 bg-green-500 text-white font-bold rounded-xl hover:bg-green-600 transition-all"
+                      >
+                        <FaWhatsapp size={20} />
+                        Sewa Sekarang via WhatsApp
+                      </button>
                     </div>
                   </div>
                 </DialogPanel>

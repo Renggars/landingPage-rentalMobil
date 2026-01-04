@@ -8,6 +8,7 @@ import { seats, yearsOfProduction } from "@/constants";
 import { useState } from "react";
 import About from "./components/About";
 import BookingTerms from "./components/BookingTerms";
+import Link from "next/link";
 
 export default function Home() {
   const [selectedBrand, setSelectedBrand] = useState<string | null>("");
@@ -43,7 +44,7 @@ export default function Home() {
     );
   });
 
-  const displayedCars = showAll ? filteredCars : filteredCars.slice(0, 8);
+  const displayedCars = filteredCars.slice(0, 8);
 
   return (
     <main className="overflow-hidden">
@@ -79,28 +80,33 @@ export default function Home() {
         </div>
 
         <div className="home__cars-wrapper">
-          {displayedCars.length > 0 &&
-            displayedCars.map((car) => <CarCard car={car} key={car.id} />)}
+          {displayedCars.map((car, index) => (
+            <div
+              key={car.id}
+              className={`
+                ${index >= 4 ? "hidden sm:block" : ""} 
+                ${index >= 6 ? "sm:hidden 2xl:block" : ""}
+              `}
+            >
+              <CarCard car={car} />
+            </div>
+          ))}
         </div>
 
         {filteredCars.length === 0 && (
-          <div className="flex flex-col justify-center items-center min-h-[50vh]">
-            <p className="text-center text-gray-500 text-lg font-semibold">
-              No cars found that match your criteria.
-            </p>
+          <div className="text-center py-20">
+            <p className="text-gray-500">Tidak ada armada yang cocok.</p>
           </div>
         )}
 
-        {/* Tombol See All */}
-        {filteredCars.length > 8 && !showAll && (
-          <div className="flex justify-center">
-            <CustomButton
-              title="See All Cars"
-              containerStyles="bg-primary-blue text-white rounded-full mt-10"
-              handleClick={() => setShowAll(true)}
-            />
-          </div>
-        )}
+        <div className="flex justify-center mt-16">
+          <Link
+            href="/armada"
+            className="bg-primary-blue text-white px-10 py-3.5 rounded-full font-bold shadow-md hover:bg-blue-700 hover:shadow-lg transition-all text-center"
+          >
+            Lihat Semua Armada
+          </Link>
+        </div>
 
         <BookingTerms />
       </div>
