@@ -2,11 +2,14 @@ import Image from "next/image";
 
 const About = () => {
   return (
-    <section id="tentang-kami" className="py-24 bg-white overflow-hidden">
+    <section
+      id="tentang-kami"
+      className="pt-10 pb-16 xl:pt-36  bg-white overflow-hidden"
+    >
       <div className="max-w-[1440px] mx-auto px-6 sm:px-16 flex flex-col lg:flex-row items-center gap-12">
         {/* Bagian Kiri: Visual/Image dengan Dekorasi */}
         <div className="flex-1 relative w-full group">
-          <div className="relative z-10 w-full h-[350px] sm:h-[450px]">
+          <div className="relative z-10 w-full h-[260px] sm:h-[340px] lg:h-[420px] xl:h-[500px]">
             <Image
               src="/images/mitsubishi-xpander.png" // Ganti dengan path gambar Xpander Anda
               alt="Rentcar Mitsubishi Xpander"
@@ -16,24 +19,24 @@ const About = () => {
           </div>
 
           {/* Elemen Dekoratif Lingkaran (Mirip Gambar) */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] bg-blue-50 rounded-full -z-0"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] xl:w-[500px] sm:h-[400px] xl:h-[500px] bg-blue-50 rounded-full -z-0"></div>
           <div className="absolute top-10 left-10 w-24 h-24 bg-blue-100/50 rounded-full blur-2xl"></div>
         </div>
 
-        {/* Bagian Kanan: Konten Teks */}
-        <div className="flex-1">
+        {/* Bagian Kanan*/}
+        <div className="flex-1 text-center lg:text-left">
           <div className="inline-block px-4 py-1.5 mb-4 rounded-full bg-blue-50 border border-blue-100">
             <span className="text-primary-blue text-sm font-bold tracking-wider uppercase">
               Rental Mobil No. 1 di Surabaya
             </span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 leading-tight mb-6 truncate">
-            Rentcar: Solusi Transportasi <br />
+          <h2 className="text-2xl sm:text-3xl xl:text-5xl font-extrabold text-slate-900 leading-[1.2] lg:leading-[1.3] mb-6">
+            Rentcar: Solusi Transportasi <br className="hidden sm:block" />
             <span className="text-primary-blue">Andal & Terpercaya</span>
           </h2>
 
-          <p className="text-slate-600 leading-relaxed mb-6 text-lg">
+          <p className="text-slate-600 mb-2 text-lg text-justify">
             Rentcar adalah penyedia layanan jasa persewaan mobil profesional
             yang berfokus pada kenyamanan dan keamanan pelanggan. Kami
             berkomitmen untuk memberikan pelayanan terbaik melalui berbagai
@@ -41,32 +44,36 @@ const About = () => {
             keperluan harian, perjalanan dinas, hingga liburan keluarga.
           </p>
 
-          <p className="text-slate-600 leading-relaxed mb-8">
+          <p className="hidden sm:block text-slate-600 text-lg mb-8 text-justify">
             Dengan armada yang selalu terawat, sopir profesional (opsional),
             serta harga yang kompetitif, kami hadir sebagai solusi transportasi
             yang fleksibel dan transparan tanpa biaya tersembunyi.
           </p>
 
-          {/* Kartu Keunggulan (Gaya Modern) */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
-            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-colors">
-              <h4 className="font-bold text-slate-900">Tarif Terjangkau</h4>
-              <p className="text-xs text-slate-500 mt-1">
-                Harga kompetitif dengan layanan premium.
-              </p>
-            </div>
-            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-colors">
-              <h4 className="font-bold text-slate-900">Berpengalaman</h4>
-              <p className="text-xs text-slate-500 mt-1">
-                Lebih dari 10 tahun melayani pelanggan.
-              </p>
-            </div>
-            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-colors">
-              <h4 className="font-bold text-slate-900">Terpercaya</h4>
-              <p className="text-xs text-slate-500 mt-1">
-                Proses booking aman dan transparan.
-              </p>
-            </div>
+          {/* FEATURES */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+            {[
+              {
+                title: "Tarif Terjangkau",
+                desc: "Harga kompetitif & transparan",
+              },
+              {
+                title: "Berpengalaman",
+                desc: "Lebih dari 10 tahun layanan",
+              },
+              {
+                title: "Terpercaya",
+                desc: "Booking aman & mudah",
+              },
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-blue-200 transition-colors"
+              >
+                <h4 className="font-bold text-slate-900">{item.title}</h4>
+                <p className="text-sm text-slate-500 mt-1">{item.desc}</p>
+              </div>
+            ))}
           </div>
 
           <a
